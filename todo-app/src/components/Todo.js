@@ -65,6 +65,8 @@ class Todo extends Component {
         //console.log(response.data)
         this.refreshState()
       });
+    this.refs.fieldName.value="";
+    this.setState({field: ""})
   }
 
   deleteTask(id){
@@ -133,8 +135,8 @@ class Todo extends Component {
     <div>Input new task</div>
 
     <div>
-    <input type="text" onChange={this.inputChangeHandler}/>
-    <Button color="success" size="sm" className='ml-2' onClick={this.postFunction}> Add</Button>
+    <input type="text" ref="fieldName" onChange={this.inputChangeHandler}/>
+    <Button color="success" size="sm" className='ml-2'  onClick={this.postFunction}> Add</Button>
     </div>
 
 
